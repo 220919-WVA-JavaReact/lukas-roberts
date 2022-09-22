@@ -33,19 +33,23 @@
 
 echo "Let's do some math!"
 echo "Enter an expression to be evaluated."
+echo "   e.g. 1 + 1 or 2 * 4"
+read num1 operator num2
 
-if [[ $2 != + && $2 != - && $2 != \* && $2 != / ]]
+
+
+if [[ $operator != + && $operator != - && $operator != \* && $operator != / ]]
 then
-    if [[ $1 =~ ^[+-]?[[:digit:]]+$ && $3 =~ ^[+-]?[[:digit:]]+$ ]]
+    if [[ $num1 =~ ^[+-]?[[:digit:]]+$ && $num2 =~ ^[+-]?[[:digit:]]+$ ]]
     then
 	echo "Invalid operator"
     else
 	echo "Invalid operator and number(s)"
     fi
-elif [[ $1 =~ ^[+-]?[[:digit:]]+$ && $3 =~ ^[+-]?[[:digit:]]+$ ]]
+elif [[ $num1 =~ ^[+-]?[[:digit:]]+$ && $num2 =~ ^[+-]?[[:digit:]]+$ ]]
     then
-    let x=$1$2$3
-    echo "${1} ${2} ${3} = ${x}"
+    x=$(($num1 $operator $num2))
+    echo "${num1} ${operator} ${num2} = ${x}"
 else
     echo "Invalid number"
 fi
