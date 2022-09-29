@@ -50,5 +50,17 @@ RIGHT JOIN inventory i ON e.favorite_candy = i.id;
 
 SELECT "name", price*quantity AS total_price FROM inventory WHERE id = 9007;
 
+SELECT "name", price FROM inventory ORDER BY price ASC LIMIT 1;
 
+SELECT "name", quantity FROM inventory ORDER BY quantity DESC LIMIT 1;
+
+SELECT * FROM inventory ORDER BY price DESC LIMIT 3;
+
+SELECT CAST(AVG(price) AS Decimal(5,2)) AS average_price FROM inventory;
+
+SELECT e."name", i.price*i.quantity AS total_price from employees e
+JOIN inventory i ON e.favorite_candy = i.id;
+
+SELECT e."name" FROM employees e
+JOIN inventory i ON e.favorite_candy = i.id WHERE i.description LIKE '%chocolate%';
 
