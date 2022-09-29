@@ -90,25 +90,31 @@ public static boolean isEven(String s){
 This method should return an array of integer where all of the elements have been multiplied by 2 if they are a multiple of 3.
 */
 public static int[] transformIntArr(int[] intArr){
+    int[] newArray = new int[intArr.length];
     for (int i = 0; i < intArr.length; i++) {
 	if (intArr[i] % 3 == 0) {
-	    intArr[i] = intArr[i] * 2;
+	    newArray[i] = intArr[i] * 2;
+	} else {
+	    newArray[i] = intArr[i];
 	}
     }
-    return intArr;
+    return newArray;
 }
 
 /*
 This method should return the same array of integer ordered from least to most.
 */
 public static int[] orderArr(int[] intArr){
-    int x = intArr.length;
-    int[] newArr = new int[x];
-    int y = 0;
-    for (int i = x - 1; i > -1; i--) {
-	newArr[y] = intArr[i];
-	y++;
+    for (int i = 0; i < intArr.length; i++) {
+	for (int j = i + 1; j < intArr.length; j++) {
+	    int x = 0;
+	    if (intArr[i] > intArr[j]) {
+		x = intArr[i];
+		intArr[i] = intArr[j];
+		intArr[j] = x;
+	    }
+	}
     }
-    return newArr;
+    return intArr;
 }
 }
