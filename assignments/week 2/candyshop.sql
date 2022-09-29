@@ -48,7 +48,7 @@ JOIN inventory i ON e.favorite_candy = i.id;
 SELECT e."name", i."name" FROM employees e
 RIGHT JOIN inventory i ON e.favorite_candy = i.id;
 
-
+SELECT "name", price*quantity AS total_price FROM inventory WHERE id = 9007;
 
 
 
