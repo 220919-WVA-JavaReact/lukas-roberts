@@ -17,11 +17,11 @@ public class Calculator {
                 System.out.println("Invalid option.");
                 System.out.println("For addition: type 'addition', for subtraction: type 'subtraction'");
                 System.out.println("For multiplication: type 'multiplication', for division: type 'division'");
+                System.out.println("Type 'quit' to exit.");
                 operator = input.nextLine();
             }
             if (operator.equals("quit")) {
                 System.out.println("See ya later, alligator");
-                running = false;
                 break;
             }
             System.out.println("Now, enter a number.");
@@ -40,7 +40,6 @@ public class Calculator {
             input.nextLine();
             System.out.println("Wanna go again?");
         }
-
     }
 
     public static double addition(double num1, double num2) {
