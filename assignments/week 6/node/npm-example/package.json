@@ -1,0 +1,14 @@
+{
+  "name": "npm-example",
+  "version": "1.0.0",
+  "description": "example description",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc -t es5 index.ts && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
